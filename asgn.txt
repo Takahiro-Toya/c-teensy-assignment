@@ -1,0 +1,360 @@
+Test 1
+Category        : 3.i to 3.v
+Input Sequence  : ‘r’
+Expected Outcome: turret aims 0 degree, that makes maximum height of star fighter. Fighter width is 14. Star fighter consists of base (4 pixels height) and turrets (maximum 3 pixels height), so fighter is always at least 4 pixels and maximum 7 pixels. When the turret aim is 0, the turret does not overlap the shield
+Status:
+
+Test 2
+Category        : 4.i to 4.ii
+Input Sequence  : ‘r’’m’’5’’1’’2’’ ‘’p’
+Expected Outcome: after 2 seconds elapsed since pressing ‘p’, 3 asteroid fall downwards. Asteroid will appear gradually from top of the screen
+Status:
+
+Test 3
+Category        : 4.v
+Input Sequence  : ‘r’’m’’4’’0’’0’’ ‘’j’’2’’8’’ ‘’3’’1’’ ‘’p’ (wait until asteroid touches shield) ’s’
+Expected Outcome: an asteroid is placed at the coordinate (30, 31), and unpause game. The asteroid moves slowly downwards. When asteroid touches the shield, command ’s’ to send status. The life should be 4 now.
+Status:
+
+Test 4
+Category        : 4.Vi
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’j’’2’’ ‘’2’’5’’ ‘’p’’w’
+Expected Outcome: place asteroid at the centre of the screen, then unpause, fire a plasma. It hits the asteroid placed at (2, 25). Once plasma hits this asteroid, the asteroid disappears, and you will see two boulders at the same location the asteroid got hit
+Status:
+
+Test 5
+Category        : 4.vi
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’k’’3’’ ‘’2’’5’’ ‘’p’’w’
+Expected Outcome: place a boulder at the centre of the screen, then unpause, fire a plasma. It hits the boulder placed at (3, 25). Once plasma hits this boulder, the boulder disappears, and you will se two fragments at the same location the boulder got hit.
+Status:
+
+Test 6
+Category        : 4.vi
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’i’’6’’ ‘’2’’5’’ ‘’p’’w’
+Expected Outcome: place a fragment at the centre of the screen, then unpause, fire a plasma. It hits the fragment placed at (3, 25). Once plasma hits this fragment, the fragment disappears.
+Status:
+
+Test 7
+Category        : 4.ix to 4.xi
+Input Sequence  : ‘r’’j’’1’’0’’ ‘’3’’0’’ ‘’k’’2’’0’’ ’’3’’0’’ ‘I’’3’’0’’ ‘’3’’0’’ ‘
+Expected Outcome: place one asteroid at (10, 30), one boulder at (20, 20), and one fragment at (30, 30). Asteroid is 7x7 size of diamond shape, boulder is 5x5 size of diamond shape, and fragment is 3x3 size of plus shape. Each shapes like diamond,
+Status:
+
+Test 8
+Category        : 5.i to 5.xii and 6.ii
+Input Sequence  : ‘r’’s’
+Expected Outcome: on teensy screen, game time, remaining useful life, and score are displayed (it should be 00:00, 5, 0). And on computer screen, game time, lives, score, number of asteroid, number of boulders, number of fragments, number of plasma bolts, aim of turret and speed of game are displayed (it should be, 00:00, 5, 0, 0, 0, 0, 0, 0, 1.000000).
+Status:
+
+Test 9
+Category        : 6.i
+Input Sequence  : ‘r’’p’’s’
+Expected Outcome: game status will be sent only to the computer
+Status:
+
+Test 10
+Category        : 7.i
+Input Sequence  : ‘r’’h’’0’’ ‘’o’’0’’ ‘’m’’0’’ ‘’j’’0’’ ‘’3’’0’’ ‘’p’’w’
+Expected Outcome: place asteroid at (0, 28), fighter is placed at x = 1, then fire a plasma. You will see that this uses pixel collision.
+Status:
+
+Test 11
+Category        : 8,i
+Input Sequence  : ‘r’’p’’r’’p’’r’’p’’r’’p’…
+Expected Outcome: unpause game by pressing ‘p’, LED flush then star fighter starts moving either left or right. This is random, so you may need to input ‘r’ and ‘p’ several times to see this functionality. 
+Status:
+
+Test 12
+Category        : 8.ii
+Input Sequence  : ‘r’’a’’p’
+Expected Outcome: pressing ‘a’ before unpausing game (pressing ‘p’) result in moving star fighter toward left direction
+Status:
+
+Test 13
+Category        : 8.ii
+Input Sequence  : ‘r’’(Joystick Left)’’p’
+Expected Outcome: ‘(Joystick Left)’ before unpausing game (pressing ‘p’) result in moving star fighter toward left direction
+Status:
+
+Test 14
+Category        : 8.iii
+Input Sequence  : ‘r’’d’’p’
+Expected Outcome: pressing ‘d’ before unpausing game (pressing ‘p’) result in moving star fighter toward right direction
+Status:
+
+Test 15
+Category        : 8.iii
+Input Sequence  : ‘r’’(Joystick Right)’’p’
+Expected Outcome: ‘(Joystick Right)’ before unpausing game (pressing ‘p’) result in moving star fighter toward right direction
+Status:
+
+Test 16
+Category        : 8.v
+Input Sequence  : ‘r’’a’’p’’(wait for a while)’’d’
+Expected Outcome: Star fighter direction is set to left before unpausing game. Pressing ‘d’ after unpausing the gamed will result is star fighter’s velocity 0, that stops fighter’s movement
+Status:
+
+Test 17
+Category        : 8.v
+Input Sequence  : ‘r’’a’’p’’(wait for a while)’’(Joystick Right)’
+Expected Outcome: Star fighter direction is set to left before unpausing game. ‘(Joystick right)’ after unpausing the gamed will result is star fighter’s velocity 0, that stops fighter’s movement
+Status:
+
+Test 18
+Category        : 8.vi
+Input Sequence  : ‘r’’d’’p’’(wait for a while)’’a’
+Expected Outcome: Star fighter direction is set to right before unpausing game. Pressing ‘a’ after unpausing the gamed will result is star fighter’s velocity 0, that stops fighter’s movement
+Status:
+
+Test 19
+Category        : 8.vi
+Input Sequence  : ‘r’’d’’p’’(wait for a while)’’(Joystick Left)’
+Expected Outcome: Star fighter direction is set to right before unpausing game. ‘(Joystick left)’ after unpausing the gamed will result is star fighter’s velocity 0, that stops fighter’s movement
+Status:
+
+Test 20
+Category        : 8.viii
+Input Sequence  : ‘r’’a’’p’
+Expected Outcome: Star fighter direction is set to left. Once the game is unpaused, the star fighter moved left until it reaches the left wall. And stops moving.
+Status:
+
+Test 21
+Category        : 8.viii
+Input Sequence  : ‘r’’d’’p’
+Expected Outcome: Star fighter direction is set to right. Once the game is unpaused, the star fighter moved right until it reaches the right wall. And stops moving.
+Status:
+
+Test 22
+Category        : 9.i 
+Input Sequence  : ‘r’’(Set Left potentiometer DOWN at most)’’o’’0’’ ‘’s’
+Expected Outcome: Turret angle is 0 degree upwards
+Status:
+
+Test 23
+Category        : 9.i 
+Input Sequence  : ‘r’’(Set left potentiometer UP (60 degrees))’’o’’-‘’6’’0’’ ‘’s’
+Expected Outcome: Turret angle is -60 degrees
+Status:
+
+Test 24
+Category        : 9.i 
+Input Sequence  : ‘r’’(Set left potentiometer DOWN (-60 degrees))’’o’’6’’0’’ ‘’s’
+Expected Outcome: Turret angle is 60 degrees 
+Status:
+
+Test 25
+Category        : 9.ii
+Input Sequence  : ‘r’’o’’3’’0’’ ‘
+Expected Outcome: Turret angle is 30 degrees. 
+Status:
+
+Test 26
+Category        : 9.i
+Input Sequence  : ‘r’’o’’6’’1’’ ‘’s’
+Expected Outcome: This command will be ignored and turret angle remains 0 degree
+Status:
+
+Test 27
+Category        : 9.i
+Input Sequence  : ‘r’’o’’-‘’6’’1’’ ‘’s’
+Expected Outcome: This command will be ignored and turret angle remains 0 degree
+Status:
+
+Test 28
+Category        : 9.ii to 9.iii
+Input Sequence  : ‘r’’p’’(Left Potentiometer Anti-clockwise)’ ’s’ … ‘(Right Potentiometer Clockwise)’’s’
+Expected Outcome: Turret angle will be set to -60 degrees when moving left potentiometer anti-clockwise. When moving it clockwise, the angle will be set to 60 degrees. While moving left potentiometer, turret on Teensy visibly reflects this angle
+Status:
+
+Test 29
+Category        : 9.iv
+Input Sequence  : ‘r’’(Left Potentiometer DOWN(-60 degrees))’’p’’o’’5’’0’’ ‘’(wait for one second)’’s’
+Expected Outcome: after one second elapsed since pressing ‘enter’ after finish inputting turret angle, turret angle is back to potentiometer’s value. It should be -60 degrees in this test because potentiometer is set to UP beforehand.
+Status:
+
+Test 30
+Category        : 10.i
+Input Sequence  : ‘r’’p’’(Joystick UP)’
+Expected Outcome: a plasma will be fired
+Status:
+
+Test 31
+Category        : 10.i
+Input Sequence  : ‘r’’p’’w’
+Expected Outcome: a plasma will be fired
+Status:
+
+Test 32
+Category        : 10.ii
+Input Sequence  : ‘r’’p’’(Joystick UP)’’(Move Left potentiometer randomly)’’(Joystick UP)’’(Move Left potentiometer randomly)’ …
+Expected Outcome: plasma will be travelling towards the direction that is same as the angle of turret
+Status:
+
+Test 33
+Category        : 10.iii
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’j’’2’’ ‘’2’’5’’ ‘’p’’w’
+Expected Outcome: place asteroid at the left side of the screen, then unpause, fire a plasma. It hits the asteroid placed at (2, 25). Once plasma hits this asteroid, the plasma disappears, and you will see two boulders at the same location the asteroid got hit
+Status:
+
+Test 34
+Category        : 10.iii
+Input Sequence  : ‘r’’p’’w’
+Expected Outcome: The plasma reaches wall without hitting any objects will disappear when they reaches the edges of the screen. 
+Status:
+
+Test 35
+Category        : 10.iV & 10.v
+Input Sequence  : ‘r’’m’’0’’ ‘’p’’(Joystick UP)’’(Use left potentiometer)’ … ’s’ …
+Expected Outcome: game speed is 0 so no objects will be visible on the screen. Keep firing plasma. At some point, plasma will not be fired (maximum plasma is set to 30). (You do this better when you move fighter left or right side then fire plasma towards right or left direction and sometimes press ’s’ to see how may plasmas are on screen. It will not go over 30).
+Status:
+
+Test 36
+Category        : 10.vi
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’j’’3’’ ‘’3’’0’’ ‘’p’’w’… ’s’
+Expected Outcome: the score after a plasma hits the asteroid will be 1.
+Status:
+
+
+Test 37
+Category        : 10.vii
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’k’’4’’ ‘’3’’0’’ ‘’p’’w’… ’s’
+Expected Outcome: the score after a plasma hits the boulder will be 2.
+Status:
+
+Test 38
+Category        : 10.viii
+Input Sequence  : ‘r’’h’’0’’ ‘’m’’0’’ ‘’o’’0’’ ‘’i’’5’’ ‘’3’’3’ ‘’p’’w’… ’s’
+Expected Outcome: the score after a plasma hits the boulder will be 4.
+Status:
+
+Test 38
+Category        : 11.i to 11.v
+Input Sequence  : ‘(pressing centre small button)’ … ‘r’
+Expected Outcome: Introduction contains student number and game title. Star fighter moves back and force between right and left walls. You can skip this introduction by pressing ‘r’
+Status:
+
+Test 38
+Category        : 11.i to 11.v
+Input Sequence  : ‘(pressing centre small button)’ … ‘(left button)’
+Expected Outcome: Introduction contains student number and game title. Star fighter moves back and force between right and left walls. You can skip this introduction by pressing ‘r’
+Status:
+
+Test 39
+Category        : 13.i & 13.ii
+Input Sequence  : ‘r’’p’’s’ … ’s’’s’’s’’s’………
+Expected Outcome: game status will be sent to the computer will “Game started” message. Then, by keeping pressing ’s’, game status will be continuously sent to the computer. You will see the game time increments by approximately 1 second
+Status:
+
+Test 40
+Category        : 14.i
+Input Sequence  : ‘r’’p’ … ‘p’
+Expected Outcome: the game is paused
+Status:
+
+Test 41
+Category        : 14.i
+Input Sequence  : ‘r’’p’ … ‘(Joystick Center)’
+Expected Outcome: the game is paused
+Status:
+
+Test 42
+Category        : 14.ii & 14.iii(game time resumes incrementing)
+Input Sequence  : ‘r’’p’ … ‘p’’s’’s’’s’’s’’s’ … ‘p’’s’
+Expected Outcome: the game time is not incremented while pause. You can check this by keeping pressing ’s’ while in paused (Game time remains same). When you unpause game and press ’s’ again, you will realise that the pausing time does not consume game elapsed time (even though there may be a second difference because of the time late you press ’s’ again after unpause). Also you will notice that the game time starts incrementing after unpaused.
+Status:
+
+Test 43
+Category        : 14.iii
+Input Sequence  : ‘r’’p’ … ‘p’ … ‘p’
+Expected Outcome: the game is unpaused now. 
+Status:
+
+Test 44
+Category        : 14.iii
+Input Sequence  : ‘r’’p’ … ‘p’ … ‘(Joystick Center)’
+Expected Outcome: the game is unpaused now.
+Status:
+
+Test 45
+Category        : 15.i to 15.ii
+Input Sequence  : ‘r’’p’ … ‘r’’p’ …
+Expected Outcome: 3 asteroids comes falling down from random x location. Try this command sequence ‘r’’p’ to see the either side of LED flushes based on the number of asteroid. If more asteroids on right side, right LED flushes, otherwise left LED flushes.
+Status:
+
+Test 46
+Category        : 16.i to 16.iv and 17
+Input Sequence  : ‘r’’l’’0’’ ‘ ...(wait until options are given)… ‘r’’s’
+Expected Outcome: once you unpause game, it becomes game over mode. Status will be sent to computer with “Game over” message. The backlight fades off while the word “GAME OVER” is displayed on the screen and LEDs ON for 2 seconds. Then the backlight fades back again, LEDs off and options to quit or restart are given on the teensy screen. Then press ‘r’ to restart, the fighter is placed at the centre. Send status that life is back to 5, score is 0, and game time is 00:00 and no objects are visible. *YOU MAY NEED TO PRESS ‘r’ A BIT LONGER WHEN YOU ARE GIVEN OPTIONS BECAUSE THE CODE INSIDE THE LOOP WHILE GAME OVER IS SHORT*
+Status:
+
+Test 47
+Category        : 18
+Input Sequence  : ‘r’’p’’q’
+Expected Outcome: quit game, and teensy goes into inverse mode and shows student number only.
+Status:
+
+Test 48
+Category        : 19.i
+Input Sequence  : ‘r’’p’’(right potentiometer clock wise)’ … ‘(right potentiometer anti-clockwise)’
+Expected Outcome: when you move right potentiometer clockwise, speeds up, otherwise speeds down. When you move right potentiometer upwards at most, then no speed, that is no objects move
+Status:
+
+Test 49
+Category        : 19.ii
+Input Sequence  : ‘r’’p’’m’’1’’0’’2’’3’’ ‘ … ‘m’’0’’ ‘
+Expected Outcome: when you set speed with command ‘m’: input 1023 will set maximum speed. Input 0 will set minimum speed (no speed)
+Status:
+
+Test 50
+Category        : 21.i to 21.ii
+Input Sequence  : ‘r’’l’’1’’ ‘’g’’8’’0’’ ‘’s’
+Expected Outcome: life is 1, and sore is 80 now.
+Status:
+
+Test 51
+Category        : 21.iii
+Input Sequence  : ‘r’’?’
+Expected Outcome: controls are printed on computer
+Status:
+
+Test 52
+Category        : 21.iv
+Input Sequence  : ‘r’’p’’h’’0’’ ‘
+Expected Outcome: move spaceship by the left edge
+Status:
+
+Test 53
+Category        : 21.v
+Input Sequence  : ‘r’’j’’7’’7’’ ‘1’’0’’ ‘’j’’3’’2’’ ‘’1’’0’’ ‘’j’’7’’8’’ ‘’2’’0’’ ‘j’’1’’0’’ ‘’3’’3’’ ‘
+Expected Outcome: one asteroid placed at (77, 10), one at (32, 10), and the third (76, 20) and forth (10, 33)commands will be ignored because those coordinates overlap shield of outside of the screen
+Status:
+
+Test 54
+Category        : 21.v
+Input Sequence  : ‘r’’p’’j’’1’’0’’ ‘1’’0’’ ‘
+Expected Outcome: nothing happens because there are already 3 asteroids spawn and this command tries to spawn forth. This is ignored.
+Status:
+
+Test 55
+Category        : 21.vi
+Input Sequence  : ‘r’’k’’7’’9’’ ‘1’’0’’ ‘’k’’8’’0’’ ‘’2’’0’’ ‘k’’1’’0’’ ‘’3’’5’’ ‘
+Expected Outcome: one boulder placed at (79, 10) the second (80, 20) and third (10, 35)commands will be ignored because those coordinates overlap shield of outside of the screen
+Status:
+
+Test 56
+Category        : 21.vi
+Input Sequence  : ‘r’’p’’k’’1’’0’’ ‘’1’’0’’ ‘’k’’1’’0’’ ‘’1’’0’’ ‘’k’’1’’0’’ ‘’1’’0’’ ‘’k’’1’’0’’ ‘’1’’0’’ ‘’k’’1’’0’’ ‘’1’’0’’ ‘’k’’1’’0’’ ‘’1’’0’’ ‘’k’’2’’0’’ ‘’2’’0’’ ‘
+Expected Outcome: 6 boulders are spawned at (10, 10) then, command of spawning a boulder at (20, 20) will be ignored because there are already 6 maximum boulders on screen.
+Status:
+
+Test 57
+Category        : 21.vii
+Input Sequence  : ‘r’’i’’8’’1’’ ‘1’’0’’ ‘’i’’8’’2’’ ‘’2’’0’’ ‘i’’1’’0’’ ‘’3’’7’’ ‘
+Expected Outcome: one fragment placed at (81, 10) the second (82, 20) and third (10, 37)commands will be ignored because those coordinates overlap shield of outside of the screen
+Status:
+
+Test 58
+Category        : 21.vii
+Input Sequence  : ‘r’’p’’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’1’’ ‘’1’’ ‘’i’’9’’ ‘’9’’ ‘
+Expected Outcome: 12 fragments are spawned at (1, 1). Then command of spewing a fragment at (9, 9) will be ignored because there are already 12 maximum fragments on screen.
+Status:
